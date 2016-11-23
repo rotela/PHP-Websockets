@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebSockets</title>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <style rel="styleshet">
+            .cuerpo {
+                min-height: 300px;
+                overflow: auto;
+                padding: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--  -->
+        <div class="row" ng-app="app">
+            <div class="col-md-6 col-md-offset-3">
+                <!--  -->
+                <h1>WebSockets
+                    <small>bidireccional</small>
+                </h1>
+                <!--  -->
+                <div class="panel panel-default" ng-controller="primario as pri">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Para: {{pri.para.usuario}}</h3>
+                    </div>
+
+                    <div class="panel-body" >
+                        <!--  -->
+                        <div class="col-sm-9" id="cuerpo"></div>
+                        <div class="col-sm-3">
+                            <div class="list-group">
+                                <a ng-repeat="u in pri.usuarios" ng-click="pri.seleccionar(u)" href="#" class="list-group-item">{{u.usuario}}</a>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <form class="form-group" ng-submit="pri.enviar()">
+                            <div class="col-sm-9">
+                                <input class="form-control" ng-model="pri.mensaje" type="text" autofocus placeholder="mensaje">
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary">enviar</button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a ng-click="pri.reconectar()" href="#/">reconectar</a>
+                                        </li>
+                                        <li>
+                                            <a ng-click="pri.emitir()" href="#/">Emitir eventoA</a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                            <a ng-click="pri.salir()" href="#/">salir</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  -->
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="node_modules/bootbox/bootbox.min.js"></script>
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="myWebSocket.js"></script>
+        <script type="text/javascript" src="myaplicacion.js"></script>
+
+    </body>
+</html>

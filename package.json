@@ -1,0 +1,25 @@
+{
+  "name": "PHP-Websockets",
+  "version": "0.0.0",
+  "description": "PHP WebSockets ==============",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "~1.5.8",
+    "bootbox": "~4.4.0",
+    "bootstrap": "~3.3.7",
+    "jquery": "~3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rotela/PHP-Websockets.git"
+  },
+  "author": "Ricardo Rotela",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/rotela/PHP-Websockets/issues"
+  }
+}
